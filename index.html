@@ -1,0 +1,151 @@
+<html>
+
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:600" rel="stylesheet">
+    <title>Dinos of Fury</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+
+    <div id="welcomePage">
+        <h1 class="GameTitle">DINOS OF FURY</h1>
+
+        <div id="userNameContainer">
+            <h2 class="gameSubtitle">WHO GOES THERE?</h2>
+            <span id="incorrectUsername"></span>
+            <br>
+            <input id="userName" type="text" placeholder="Enter username here">
+            <br>
+            <br>
+            <button type="button" class="preGameMenuButton" onclick="checkUserName()">Play Game</button>
+        </div>
+        <button class="preGameMenuButton" onclick="openHowToPlayMenu()">How To Play</button>
+        <div id="howToPlayMenu">
+          <h1 class="GameTitle">DINOS OF FURY</h1>
+          <h2 class="gameSubtitle">HOW TO PLAY</h2>
+          <table class="howToPlayTable">
+            <tr>
+              <td id="currentHowToPlayInfo">
+                <b>Objective</b><br>
+                Survive as long as you can in the dungeon by shooting the monsters before they can reach you.
+              </td>
+              <td valign="bottom">
+                <button class="preGameMenuButton" id="helpMenuButtonBack" onclick="helpMenuGoBack()">Back</button>
+                <button class="preGameMenuButton" id="helpMenuButtonNext" onclick="helpMenuNext()">Next</button></td>
+            </tr>
+          </table>
+          <br>
+          <button class="preGameMenuButton" onclick="closeHowToPlayMenu()">I'm Ready</button>
+        </div>
+
+
+
+        <div id="chooseDinoContainer">
+            <h2 id="gameSubtitle">CHOOSE YOUR DINO</h2>
+
+            <button id="dinoButtonRed" class="chooseDinoButton" onclick="changeDino('red');startGame();closeMainMenu();this.blur();"><img class="dinoImage" src="images/redDino.gif"></button>
+            <button id="dinoButtonGreen" class="chooseDinoButton" onclick="changeDino('green');startGame();closeMainMenu();this.blur();"><img class="dinoImage" src="images/greenDino.gif"></button>
+            <button id="dinoButtonBlue" class="chooseDinoButton" onclick="changeDino('blue');startGame();closeMainMenu();this.blur();"><img class="dinoImage" src="images/blueDino.gif"></button>
+            <button id="dinoButtonYellow" class="chooseDinoButton" onclick="changeDino('yellow');startGame();closeMainMenu();this.blur();"><img class="dinoImage" src="images/yellowDino.gif"></button>
+        </div>
+    </div>
+
+    <center>
+        <table id="gameContainer">
+            <tr>
+                <td valign="top" align="left">
+                    <div class="statsDiv">
+                        <div class="statsContainer">
+                            <div id="playerLife"></div>
+                            <br>
+                            <div id="userScore"></div>
+                            <div id="userHighScore">Highscore: 0</div>
+                            <br>
+
+                            <div id="alienKillContainer"><img src="images/alien.png"><span id="enemy0KillCount"></span></div>
+                            <div id="zombieKillContainer"><img src="images/zombie.png"><span id="enemy1KillCount"></span></div>
+                            <div id="soulDestroyerKillContainer"><img src="images/soulDestroyer.png"><span id="enemy2KillCount"></span></div>
+
+                        </div>
+                    </div>
+                    <br>
+                    <div class="powerContainer">
+                        <div class="powerDiv">
+                            <div id="powerBar"></div>
+                        </div>
+                    </div>
+                    <br>
+                </td>
+                <td rowspan="3">
+                    <div id="gameOverMenuContainer">
+                        <div id="gameOverMenu">
+                            <span style="font-size:70px;">GAME OVER</span>
+                            <br>
+                            <br>
+                            <span style="font-size:40px;">YOUR SCORE</span>
+                            <br>
+                            <span style="font-size:65px;" id="playerScore">50</span>
+                            <br>
+                            <span style="font-size:30px;">HIGH SCORE</span>
+                            <br>
+                            <span style="font-size:35px;" id="playerHighScore">100</span>
+                            <br>
+                            <br>
+                            <div class="endGameButtonContainer">
+                                <button class="endGameButton" onclick="returnToHomePage();this.blur();">OK</button>
+                            </div>
+                        </div>
+                    </div>
+                    <canvas id="mainCanvas" height="535" width="979" style="margin-left:0;"></canvas>
+                </td>
+            </tr>
+            <tr>
+                <td valign="top" align="left">
+                    <div class="blueContainer">
+                        <button class="menuButtons" id="pauseButton" onclick="pauseGame();this.blur();">Pause</button>
+                    </div>
+                    <div class="blueContainer">
+
+                        <button class="menuButtons" onclick="quitGame();this.blur();">Menu</button>
+                    </div>
+                </td>
+            </tr>
+
+        </table>
+    </center>
+    <div style="display:none;">
+        <img src="images/greenDino.png" id="greenDino">
+        <img src="images/redDino.png" id="redDino">
+        <img src="images/yellowDino.png" id="yellowDino">
+        <img src="images/blueDino.png" id="blueDino">
+
+        <img src="images/greenGun.png" id="greenGun">
+        <img src="images/redGun.png" id="redGun">
+        <img src="images/yellowGun.png" id="yellowGun">
+        <img src="images/blueGun.png" id="blueGun">
+
+        <img src="images/greenBullet.png" id="greenBullet">
+        <img src="images/redBullet.png" id="redBullet">
+        <img src="images/yellowBullet.png" id="yellowBullet">
+        <img src="images/blueBullet.png" id="blueBullet">
+
+        <img src="images/background.jpg" id="backgroundImage">
+        <img src="images/fire.png" id="fireImage">
+        <img src="images/enemySprites.png" id="enemySprites">
+    </div>
+    <br>
+    <script src="scripts/variables.js"></script>
+    <script src="scripts/gameUpdate.js"></script>
+    <script src="scripts/gameEvents.js"></script>
+    <script src="scripts/input.js"></script>
+    <script src="scripts/menu.js"></script>
+    <script src="scripts/player.js"></script>
+    <script src="scripts/enemies.js"></script>
+    <script src="scripts/bullets.js"></script>
+    <script src="scripts/powers.js"></script>
+    <script src="scripts/stats.js"></script>
+
+
+</body>
+</html>

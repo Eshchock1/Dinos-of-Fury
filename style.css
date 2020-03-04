@@ -1,0 +1,292 @@
+@font-face {
+    font-family: 'minecraft';
+    src: url(fonts/minecraft.ttf);
+    font-style: normal;
+}
+
+body {
+    background-color: #22102a;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+#welcomePage {
+    background-image: url("images/homeMenuBackground.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    z-index: 5;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    position: fixed;
+    transition: all 1.8s ease-in-out;
+    top: 0;
+    left: 0;
+    background-color: gray;
+    text-align: center;
+}
+
+.GameTitle {
+    color: white;
+    font-family: "minecraft";
+    font-size: 120px;
+    margin-top: 70px;
+    margin-bottom: 0;
+}
+
+#gameSubtitle,
+.gameSubtitle {
+    color:  #232323;
+    font-family: "minecraft";
+    font-size: 55px;
+    margin-top: 15px;
+    margin-bottom:0px;
+
+}
+
+.chooseDinoButton {
+    width: 200px;
+    height: 200px;
+    margin-right: 65px;
+    margin-left: 65px;
+    background-color: Transparent;
+    background-repeat: no-repeat;
+    border: none;
+    overflow: hidden;
+    outline: none;
+    transition: all 0.4s ease-in-out;
+}
+
+.chooseDinoButton:hover {
+    width: 230px;
+    height: 230px;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.dinoImage {
+    width: 100%;
+    height: 100%;
+}
+
+#mainCanvas {
+    margin-top: 50px;
+    padding: 0;
+}
+
+#userName {
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0.2vh 0.2vh 1.3vh 0px rgba(0, 0, 0, 0.2), 1.3vh 1.3vh 0 rgba(0, 0, 0, 0.1);
+    color: #232323;
+    border: none;
+    height: 60px;
+    width: 400px;
+    text-align: center;
+    font-size: 30px;
+    font-family: "Montserrat";
+}
+
+#incorrectUsername {
+    color: red;
+    font-size: 25px;
+    font-family: "Montserrat";
+}
+
+#chooseDinoContainer {
+    height: 0;
+    overflow: hidden;
+    transition: all 1.5s ease-in-out;
+}
+
+.preGameMenuButton {
+    width: 200px;
+    height: 60px;
+    color: white;
+    font-family: "minecraft";
+    font-size: 25px;
+    background-color: #232323;
+    margin: 10px;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0.2vh 0.2vh 1.3vh 0px rgba(0, 0, 0, 0.2), 1.3vh 1.3vh 0 rgba(0, 0, 0, 0.1);
+    transition-duration: 0.3s;
+}
+
+.preGameMenuButton:hover {
+    box-shadow: 0.2vh 0.2vh 1.3vh 0px rgba(0, 0, 0, 0.2), 1.6vh 1.6vh 0 rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+}
+
+#userNameContainer {
+    height: 500px;
+    overflow: hidden;
+    transition: all 1.0s ease-in-out;
+}
+
+.statsContainer {
+    margin: 0;
+    margin-bottom: 9px;
+    padding: 22px;
+    background-color: #a5919a;
+    border-radius: 5px;
+    font-family: "minecraft";
+    font-size: 25px;
+    padding-bottom: 14px;
+    color: black;
+}
+
+.statsDiv {
+    margin-top: 60px;
+    margin-right: 20px;
+    background-color: #43345d;
+    border: 4px solid black;
+    border-radius: 15px;
+    box-shadow: 0.2vh 0.2vh 1.3vh 0px rgba(0, 0, 0, 0.2), 1.3vh 1.3vh 0 rgba(0, 0, 0, 0.1);
+    margin-bottom: 0;
+}
+
+#userScore {
+    font-size: 35px;
+}
+
+#userHighScore {
+    font-size: 22px;
+}
+
+.blueContainer {
+    margin-top: 0;
+    background-color: #43345d;
+    border: 4px solid black;
+    border-radius: 15px;
+    box-shadow: 0.2vh 0.2vh 1.3vh 0px rgba(0, 0, 0, 0.2), 1.3vh 1.3vh 0 rgba(0, 0, 0, 0.1);
+    padding: 0;
+    width: 145px;
+    display: inline-block;
+}
+
+.menuButtons {
+    margin-bottom: 9px;
+    padding: 8px;
+    background-color: #a5919a;
+    border-radius: 5px;
+    font-family: "minecraft";
+    font-size: 25px;
+    color: black;
+    width: 145px;
+}
+
+#powerBar {
+    width: 0;
+    height: 10px;
+    background-color: red;
+}
+
+.powerContainer {
+    margin-top: 0;
+    background-color: #43345d;
+    border: 4px solid black;
+    border-radius: 15px;
+    box-shadow: 0.2vh 0.2vh 1.3vh 0px rgba(0, 0, 0, 0.2), 1.3vh 1.3vh 0 rgba(0, 0, 0, 0.1);
+    padding: 0;
+    width: 300px;
+}
+
+.powerDiv {
+    margin-bottom: 9px;
+    padding: 22px;
+    background-color: #a5919a;
+    border-radius: 5px;
+    font-family: "minecraft";
+    font-size: 25px;
+    padding-bottom: 14px;
+    color: black;
+}
+
+#gameOverMenu {
+    position: fixed;
+    margin-bottom: 15px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 500px;
+    height: 300px;
+    font-family: "minecraft";
+    font-size: 40px;
+    background-color: #a5919a;
+    text-align: center;
+    border-radius: 5px;
+}
+
+#gameOverMenuContainer {
+    position: fixed;
+    margin-left: 225px;
+    margin-top: -500px;
+    background-color: #43345d;
+    border: 4px solid black;
+    border-radius: 15px;
+    box-shadow: 0.2vh 0.2vh 1.3vh 0px rgba(0, 0, 0, 0.2), 1.3vh 1.3vh 0 rgba(0, 0, 0, 0.1);
+    padding: 0;
+    width: 500px;
+    height: 355px;
+    transition: all 1.8s ease-in-out;
+}
+
+.endGameButtonContainer {
+    margin: 0;
+    background-color: #43345d;
+    border: 4px solid black;
+    border-radius: 15px;
+    box-shadow: 0.2vh 0.2vh 1.3vh 0px rgba(0, 0, 0, 0.2), 1.3vh 1.3vh 0 rgba(0, 0, 0, 0.1);
+    padding: 0;
+    width: 145px;
+    display: inline-block;
+}
+
+.endGameButton {
+    margin-bottom: 9px;
+    padding: 8px;
+    background-color: #a5919a;
+    border-radius: 5px;
+    font-family: "minecraft";
+    font-size: 25px;
+    color: black;
+    width: 145px;
+}
+#howToPlayMenu {
+  position:fixed;
+  top:0;
+  height:100%;
+  width:100%;
+  opacity:0;
+  z-index:-1;
+overflow:hidden;
+transition: all 1.5s ease-in-out;
+background-color:#a5919a;
+
+}
+.howToPlayTable{
+  margin-top:0;
+  width:1250px;
+  height:230px;
+  overflow:hidden;
+  margin:auto;
+}
+
+#currentHowToPlayInfo {
+  font-family:"minecraft";
+  font-size:30px;
+
+  margin:0;
+  width:80%;
+}
+#helpMenuButtonBack,#helpMenuButtonNext {
+  width:100px;
+  font-size:20px;
+}
+#helpMenuButtonBack {
+  background-color:gray;
+}
+.smallText {
+  font-size:20px;
+}
