@@ -94,12 +94,6 @@ body {
     font-family: "Montserrat";
 }
 
-#chooseDinoContainer {
-    height: 0;
-    overflow: hidden;
-    transition: all 1.5s ease-in-out;
-}
-
 .preGameMenuButton {
     width: 200px;
     height: 60px;
